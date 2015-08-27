@@ -49,11 +49,6 @@ public class UrlUtils {
         }
     }
 
-    /**
-     *
-     * @param url
-     * @return
-     */
     public static String encodeIllegalCharacterInUrl(String url) {
         //TODO more charator support
         return url.replace(" ", "%20");
@@ -83,14 +78,10 @@ public class UrlUtils {
         return domain;
     }
 
-    /**
-     * allow blank space in quote
-     */
+    /** allow blank space in quote   */
     private static Pattern patternForHrefWithQuote = Pattern.compile("(<a[^<>]*href=)[\"']([^\"'<>]*)[\"']", Pattern.CASE_INSENSITIVE);
 
-    /**
-     * disallow blank space without quote
-     */
+    /**disallow blank space without quote  */
     private static Pattern patternForHrefWithoutQuote = Pattern.compile("(<a[^<>]*href=)([^\"'<>\\s]+)", Pattern.CASE_INSENSITIVE);
 
     public static String fixAllRelativeHrefs(String html, String url) {

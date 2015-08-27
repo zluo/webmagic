@@ -1,6 +1,7 @@
 package us.codecraft.webmagic.selector;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,9 +15,7 @@ public class OrSelector implements Selector {
     private List<Selector> selectors = new ArrayList<Selector>();
 
     public OrSelector(Selector... selectors) {
-        for (Selector selector : selectors) {
-            this.selectors.add(selector);
-        }
+	this.selectors.addAll(Arrays.asList(selectors));
     }
 
     public OrSelector(List<Selector> selectors) {

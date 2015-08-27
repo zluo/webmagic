@@ -52,7 +52,7 @@ public class HttpClientDownloaderTest {
     public void testCycleTriedTimes() {
         HttpClientDownloader httpClientDownloader = new HttpClientDownloader();
         Task task = Site.me().setDomain("localhost").setCycleRetryTimes(5).toTask();
-        Request request = new Request("http://localhost/404");
+        Request request = new Request("http://mylocalhost/404");
         Page page = httpClientDownloader.download(request, task);
         assertThat(page.getTargetRequests().size() > 0);
         assertThat((Integer) page.getTargetRequests().get(0).getExtra(Request.CYCLE_TRIED_TIMES)).isEqualTo(1);

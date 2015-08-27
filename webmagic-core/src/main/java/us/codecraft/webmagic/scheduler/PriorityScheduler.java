@@ -33,7 +33,7 @@ public class PriorityScheduler extends DuplicateRemovedScheduler implements Moni
     private PriorityBlockingQueue<Request> priorityQueueMinus = new PriorityBlockingQueue<Request>(INITIAL_CAPACITY, new Comparator<Request>() {
         @Override
         public int compare(Request o1, Request o2) {
-            return -NumberUtils.compareLong(o1.getPriority(), o2.getPriority());
+            return 0- ((o1.getPriority() < o2.getPriority()) ? -1 : ((o1.getPriority() == o2.getPriority()) ? 0 : 1));
         }
     });
 
