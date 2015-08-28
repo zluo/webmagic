@@ -6,8 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import us.codecraft.webmagic.*;
 import us.codecraft.webmagic.utils.Experimental;
-import us.codecraft.webmagic.pipeline.Pipeline;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.pipeline.IPipeline;
+import us.codecraft.webmagic.processor.IPageProcessor;
 import us.codecraft.webmagic.processor.SimplePageProcessor;
 import us.codecraft.webmagic.selector.Html;
 import us.codecraft.webmagic.selector.PlainText;
@@ -23,11 +23,11 @@ import java.io.*;
  * @since 0.2.1
  */
 @Experimental
-public class FileCache extends FilePersistentBase implements Downloader, Pipeline, PageProcessor {
+public class FileCache extends FilePersistentBase implements IDownloader, IPipeline, IPageProcessor {
 
-    private Downloader downloaderWhenFileMiss;
+    private IDownloader downloaderWhenFileMiss;
 
-    private final PageProcessor pageProcessor;
+    private final IPageProcessor pageProcessor;
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -41,7 +41,7 @@ public class FileCache extends FilePersistentBase implements Downloader, Pipelin
         downloaderWhenFileMiss = new HttpClientDownloader();
     }
 
-    public FileCache setDownloaderWhenFileMiss(Downloader downloaderWhenFileMiss) {
+    public FileCache setDownloaderWhenFileMiss(IDownloader downloaderWhenFileMiss) {
         this.downloaderWhenFileMiss = downloaderWhenFileMiss;
         return this;
     }

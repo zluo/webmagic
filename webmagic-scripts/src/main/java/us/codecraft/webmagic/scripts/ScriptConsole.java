@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.Task;
-import us.codecraft.webmagic.pipeline.Pipeline;
+import us.codecraft.webmagic.pipeline.IPipeline;
 
 import java.util.HashMap;
 import java.util.List;
@@ -95,7 +95,7 @@ public class ScriptConsole {
         pageProcessor.getSite().setRetryTimes(3);
         pageProcessor.getSite().setAcceptStatCode(Sets.<Integer>newHashSet(200, 404,403, 500,502));
         Spider spider = Spider.create(pageProcessor).thread(params.getThread());
-        spider.clearPipeline().addPipeline(new Pipeline() {
+        spider.clearPipeline().addPipeline(new IPipeline() {
             @Override
             public void process(ResultItems resultItems, Task task) {
 

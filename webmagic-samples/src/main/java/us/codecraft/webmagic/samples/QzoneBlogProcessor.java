@@ -2,14 +2,14 @@ package us.codecraft.webmagic.samples;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 
 import java.util.List;
 
 /**
  * @author code4crafter@gmail.com <br>
  */
-public class QzoneBlogProcessor implements PageProcessor {
+public class QzoneBlogProcessor implements IPageProcessor {
     @Override
     public void process(Page page) {
         //http://progressdaily.diandian.com/post/2013-01-24/40046867275

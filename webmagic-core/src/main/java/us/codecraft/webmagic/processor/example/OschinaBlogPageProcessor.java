@@ -3,14 +3,14 @@ package us.codecraft.webmagic.processor.example;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 
 import java.util.List;
 
 /**
  * @author code4crafter@gmail.com <br>
  */
-public class OschinaBlogPageProcessor implements PageProcessor {
+public class OschinaBlogPageProcessor implements IPageProcessor {
 
     private Site site = Site.create().setDomain("my.oschina.net");
 

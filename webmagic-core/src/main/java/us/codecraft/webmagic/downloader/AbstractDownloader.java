@@ -11,7 +11,7 @@ import us.codecraft.webmagic.selector.Html;
  * @author code4crafter@gmail.com
  * @since 0.5.0
  */
-public abstract class AbstractDownloader implements Downloader {
+public abstract class AbstractDownloader implements IDownloader {
 
     /**
      * A simple method to download a url.

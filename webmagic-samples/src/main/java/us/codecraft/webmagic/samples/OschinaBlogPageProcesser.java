@@ -4,7 +4,7 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.monitor.SpiderMonitor;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 import us.codecraft.webmagic.scheduler.QueueScheduler;
 import us.codecraft.webmagic.scheduler.component.BloomFilterDuplicateRemover;
 
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @author code4crafter@gmail.com <br>
  */
-public class OschinaBlogPageProcesser implements PageProcessor {
+public class OschinaBlogPageProcesser implements IPageProcessor {
 
     private Site site = Site.create().setDomain("my.oschina.net").addStartUrl("http://my.oschina.net/flashsword/blog");
 

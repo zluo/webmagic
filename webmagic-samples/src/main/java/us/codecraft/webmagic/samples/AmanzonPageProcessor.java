@@ -3,7 +3,7 @@ package us.codecraft.webmagic.samples;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 import us.codecraft.webmagic.selector.Html;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author code4crafer@gmail.com
  */
-public class AmanzonPageProcessor implements PageProcessor{
+public class AmanzonPageProcessor implements IPageProcessor{
     public void process(Page page) {
 
         Html html = page.getHtml();

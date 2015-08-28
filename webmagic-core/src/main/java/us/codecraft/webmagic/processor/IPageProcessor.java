@@ -17,7 +17,7 @@ import us.codecraft.webmagic.Site;
  * @see Page
  * @since 0.1.0
  */
-public interface PageProcessor {
+public interface IPageProcessor {
 
     /**
      * process the page, extract urls to fetch, extract the data and store

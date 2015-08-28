@@ -5,7 +5,7 @@ import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.downloader.selenium.SeleniumDownloader;
 import us.codecraft.webmagic.pipeline.FilePipeline;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 
 /**
  * 花瓣网抽取器。<br>
@@ -14,7 +14,7 @@ import us.codecraft.webmagic.processor.PageProcessor;
  * Date: 13-7-26 <br>
  * Time: 下午4:08 <br>
  */
-public class HuabanProcessor implements PageProcessor {
+public class HuabanProcessor implements IPageProcessor {
 
     private Site site;
 

@@ -4,13 +4,13 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.model.PageMapper;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 
 /**
  * @author code4crafter@gmail.com <br>
  * @since 0.3.2
  */
-public class GithubRepoPageMapper implements PageProcessor {
+public class GithubRepoPageMapper implements IPageProcessor {
 
     private Site site = Site.create().setRetryTimes(3).setSleepTime(0);
 

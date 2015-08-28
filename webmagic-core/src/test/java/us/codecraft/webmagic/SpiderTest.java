@@ -2,9 +2,9 @@ package us.codecraft.webmagic;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import us.codecraft.webmagic.downloader.Downloader;
-import us.codecraft.webmagic.pipeline.Pipeline;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.downloader.IDownloader;
+import us.codecraft.webmagic.pipeline.IPipeline;
+import us.codecraft.webmagic.processor.IPageProcessor;
 import us.codecraft.webmagic.processor.SimplePageProcessor;
 import us.codecraft.webmagic.scheduler.Scheduler;
 
@@ -19,7 +19,7 @@ public class SpiderTest {
     @Ignore("long time")
     @Test
     public void testStartAndStop() throws InterruptedException {
-        Spider spider = Spider.create(new SimplePageProcessor("http://www.oschina.net/", "http://www.oschina.net/*")).addPipeline(new Pipeline() {
+        Spider spider = Spider.create(new SimplePageProcessor("http://www.oschina.net/", "http://www.oschina.net/*")).addPipeline(new IPipeline() {
             @Override
             public void process(ResultItems resultItems, Task task) {
                 System.out.println(1);
@@ -43,7 +43,7 @@ public class SpiderTest {
     }
 
     private void testRound() {
-        Spider spider = Spider.create(new PageProcessor() {
+        Spider spider = Spider.create(new IPageProcessor() {
 
             private AtomicInteger count = new AtomicInteger();
 
@@ -56,7 +56,7 @@ public class SpiderTest {
             public Site getSite() {
                 return Site.create().setSleepTime(0);
             }
-        }).setDownloader(new Downloader() {
+        }).setDownloader(new IDownloader() {
             @Override
             public Page download(Request request, Task task) {
                 return new Page().setRawText("");

@@ -4,7 +4,7 @@ import org.apache.commons.collections.CollectionUtils;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 import us.codecraft.webmagic.selector.JsonPathSelector;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  * @author code4crafter@gmail.com
  * @since 0.5.0
  */
-public class AngularJSProcessor implements PageProcessor {
+public class AngularJSProcessor implements IPageProcessor {
 
     private Site site = Site.create();
 

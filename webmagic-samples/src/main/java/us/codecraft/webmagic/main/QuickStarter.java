@@ -38,7 +38,7 @@ public class QuickStarter {
         key = readKey(key);
         System.out.println("The demo started and will last 20 seconds...");
         //Start spider
-        OOSpider.create(Site.create().addStartUrl(urlMap.get(key)), clazzMap.get(key)).pipeline(new MultiPagePipeline()).pipeline(new ConsolePipeline()).runAsync();
+        OOSpider.create(Site.create().addStartUrl(urlMap.get(key)), clazzMap.get(key)).addPipeline(new MultiPagePipeline()).addPipeline(new ConsolePipeline()).runAsync();
 
         try {
             Thread.sleep(20000);

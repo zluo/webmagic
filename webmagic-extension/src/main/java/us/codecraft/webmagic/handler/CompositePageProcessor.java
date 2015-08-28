@@ -2,7 +2,7 @@ package us.codecraft.webmagic.handler;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
  * @author code4crafter@gmail.com
  * @date 14-4-5
  */
-public class CompositePageProcessor implements PageProcessor {
+public class CompositePageProcessor implements IPageProcessor {
 
     private Site site;
 

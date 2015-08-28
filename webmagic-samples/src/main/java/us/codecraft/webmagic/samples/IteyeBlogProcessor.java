@@ -3,12 +3,12 @@ package us.codecraft.webmagic.samples;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 
 /**
  * @author code4crafter@gmail.com <br>
  */
-public class IteyeBlogProcessor implements PageProcessor {
+public class IteyeBlogProcessor implements IPageProcessor {
 
     private Site site;
 

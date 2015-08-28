@@ -12,7 +12,7 @@ import us.codecraft.webmagic.Task;
  * @see ConsolePipeline
  * @see FilePipeline
  */
-public interface Pipeline {
+public interface IPipeline {
 
     /**
      * Process extracted results.

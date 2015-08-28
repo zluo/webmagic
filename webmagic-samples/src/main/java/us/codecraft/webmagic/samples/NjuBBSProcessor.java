@@ -2,7 +2,7 @@ package us.codecraft.webmagic.samples;
 
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  * Date: 13-4-21
  * Time: 下午8:08
  */
-public class NjuBBSProcessor implements PageProcessor {
+public class NjuBBSProcessor implements IPageProcessor {
     @Override
     public void process(Page page) {
         List<String> requests = page.getHtml().regex("<a[^<>]*href=(bbstcon\\?board=Pictures&file=[^>]*)").all();

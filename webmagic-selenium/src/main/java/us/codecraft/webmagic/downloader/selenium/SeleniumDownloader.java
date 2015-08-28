@@ -9,7 +9,7 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Task;
-import us.codecraft.webmagic.downloader.Downloader;
+import us.codecraft.webmagic.downloader.IDownloader;
 import us.codecraft.webmagic.selector.Html;
 import us.codecraft.webmagic.selector.PlainText;
 import us.codecraft.webmagic.utils.UrlUtils;
@@ -26,7 +26,7 @@ import java.util.Map;
  * Date: 13-7-26 <br>
  * Time: 下午1:37 <br>
  */
-public class SeleniumDownloader implements Downloader, Closeable {
+public class SeleniumDownloader implements IDownloader, Closeable {
 
     private volatile WebDriverPool webDriverPool;
 

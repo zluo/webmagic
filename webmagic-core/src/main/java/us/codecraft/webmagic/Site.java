@@ -13,7 +13,7 @@ import java.util.*;
  * Object contains setting for crawler.<br>
  *
  * @author code4crafter@gmail.com <br>
- * @see us.codecraft.webmagic.processor.PageProcessor
+ * @see us.codecraft.webmagic.processor.IPageProcessor
  * @since 0.1.0
  */
 public class Site {
@@ -70,7 +70,7 @@ public class Site {
     }
 
     /**
-     * new a Site
+     * create a Site
      *
      * @return new site
      */

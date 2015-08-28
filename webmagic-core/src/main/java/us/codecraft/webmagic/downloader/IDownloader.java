@@ -12,7 +12,7 @@ import us.codecraft.webmagic.Task;
  * @author code4crafter@gmail.com <br>
  * @since 0.1.0
  */
-public interface Downloader {
+public interface IDownloader {
 
     /**
      * Downloads web pages and store in Page object.

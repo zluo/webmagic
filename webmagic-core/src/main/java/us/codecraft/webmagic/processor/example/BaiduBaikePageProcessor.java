@@ -4,7 +4,7 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  * @author code4crafter@gmail.com <br>
  * @since 0.4.0
  */
-public class BaiduBaikePageProcessor implements PageProcessor {
+public class BaiduBaikePageProcessor implements IPageProcessor {
 
     private Site site = Site.create()//.setHttpProxy(new HttpHost("127.0.0.1",8888))
             .setRetryTimes(3).setSleepTime(1000).setUseGzip(true);

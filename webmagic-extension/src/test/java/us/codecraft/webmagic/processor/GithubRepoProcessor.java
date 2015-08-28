@@ -5,12 +5,12 @@ import org.junit.Test;
 import us.codecraft.webmagic.*;
 import us.codecraft.webmagic.downloader.MockGithubDownloader;
 import us.codecraft.webmagic.model.OOSpider;
-import us.codecraft.webmagic.pipeline.Pipeline;
+import us.codecraft.webmagic.pipeline.IPipeline;
 
 /**
  * @author code4crafter@gmail.com
  */
-public class GithubRepoProcessor implements PageProcessor {
+public class GithubRepoProcessor implements IPageProcessor {
     @Override
     public void process(Page page) {
         page.putField("star",page.getHtml().xpath("//ul[@class='pagehead-actions']/li[2]//a[@class='social-count js-social-count']/text()").toString());
@@ -24,7 +24,7 @@ public class GithubRepoProcessor implements PageProcessor {
 
     @Test
     public void test() {
-        OOSpider.create(new GithubRepoProcessor()).addPipeline(new Pipeline() {
+        OOSpider.create(new GithubRepoProcessor()).addPipeline(new IPipeline() {
             @Override
             public void process(ResultItems resultItems, Task task) {
                 Assert.assertEquals("78",((String)resultItems.get("star")).trim());

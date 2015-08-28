@@ -3,7 +3,7 @@ package us.codecraft.webmagic.samples;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 import us.codecraft.webmagic.samples.pipeline.OneFilePipeline;
 import us.codecraft.webmagic.scheduler.FileCacheQueueScheduler;
 import us.codecraft.webmagic.selector.Selectable;
@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * @author code4crafer@gmail.com
  */
-public class MamacnPageProcessor implements PageProcessor {
+public class MamacnPageProcessor implements IPageProcessor {
 
     private Site site = Site.create().setDomain("www.mama.cn").setSleepTime(100);
 

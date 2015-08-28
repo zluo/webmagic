@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
-import us.codecraft.webmagic.pipeline.Pipeline;
+import us.codecraft.webmagic.pipeline.IPipeline;
 import us.codecraft.webmagic.utils.FilePersistentBase;
 
 import java.io.*;
@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * @author code4crafer@gmail.com
  */
-public class OneFilePipeline extends FilePersistentBase implements Pipeline {
+public class OneFilePipeline extends FilePersistentBase implements IPipeline {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 

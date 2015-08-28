@@ -17,13 +17,13 @@ import java.util.List;
  * {@link #getHtml()} get content of current page <br>
  * {@link #putField(String, Object)} save extracted result <br>
  * {@link #getResultItems()} get extract results to be used in
- * {@link us.codecraft.webmagic.pipeline.Pipeline}<br>
+ * {@link us.codecraft.webmagic.pipeline.IPipeline}<br>
  * {@link #addTargetRequests(java.util.List)} {@link #addTargetRequest(String)}
  * add urls to fetch <br>
  *
  * @author code4crafter@gmail.com <br>
- * @see us.codecraft.webmagic.downloader.Downloader
- * @see us.codecraft.webmagic.processor.PageProcessor
+ * @see us.codecraft.webmagic.downloader.IDownloader
+ * @see us.codecraft.webmagic.processor.IPageProcessor
  * @since 0.1.0
  */
 public class Page {

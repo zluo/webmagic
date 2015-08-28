@@ -5,7 +5,7 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 import us.codecraft.webmagic.scheduler.PriorityScheduler;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import static us.codecraft.webmagic.selector.Selectors.xpath;
 /**
  * @author code4crafter@gmail.com
  */
-public class ZipCodePageProcessor implements PageProcessor {
+public class ZipCodePageProcessor implements IPageProcessor {
 
     private Site site = Site.create().setCharset("gb2312")
             .setSleepTime(100);
@@ -78,7 +78,7 @@ public class ZipCodePageProcessor implements PageProcessor {
     }
 
     public static void main(String[] args) {
-        Spider spider = Spider.create(new ZipCodePageProcessor()).scheduler(new PriorityScheduler()).addUrl("http://www.ip138.com/post/");
+        Spider spider = Spider.create(new ZipCodePageProcessor()).setScheduler(new PriorityScheduler()).addUrl("http://www.ip138.com/post/");
 
         spider.run();
     }

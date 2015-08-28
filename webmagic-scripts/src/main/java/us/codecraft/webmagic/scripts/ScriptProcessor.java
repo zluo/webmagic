@@ -5,7 +5,7 @@ import org.jruby.RubyHash;
 import org.python.core.PyDictionary;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 
 import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
@@ -19,7 +19,7 @@ import java.util.Map;
  * @author code4crafter@gmail.com
  * @since 0.4.1
  */
-public class ScriptProcessor implements PageProcessor {
+public class ScriptProcessor implements IPageProcessor {
 
     private ScriptEnginePool enginePool;
 

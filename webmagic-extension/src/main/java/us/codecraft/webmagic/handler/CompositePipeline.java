@@ -2,7 +2,7 @@ package us.codecraft.webmagic.handler;
 
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
-import us.codecraft.webmagic.pipeline.Pipeline;
+import us.codecraft.webmagic.pipeline.IPipeline;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * @author code4crafer@gmail.com
  */
-public class CompositePipeline implements Pipeline {
+public class CompositePipeline implements IPipeline {
 
     private List<SubPipeline> subPipelines = new ArrayList<SubPipeline>();
 

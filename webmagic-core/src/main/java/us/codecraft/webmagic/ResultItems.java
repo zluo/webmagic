@@ -11,7 +11,7 @@ import java.util.Map;
  * @author code4crafter@gmail.com <br>
  * @since 0.1.0
  * @see Page
- * @see us.codecraft.webmagic.pipeline.Pipeline
+ * @see us.codecraft.webmagic.pipeline.IPipeline
  */
 public class ResultItems {
 

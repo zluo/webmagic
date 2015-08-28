@@ -18,7 +18,7 @@ import java.io.PrintWriter;
  * @author code4crafter@gmail.com <br>
  * @since 0.2.0
  */
-public class JsonFilePipeline extends FilePersistentBase implements Pipeline {
+public class JsonFilePipeline extends FilePersistentBase implements IPipeline {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 

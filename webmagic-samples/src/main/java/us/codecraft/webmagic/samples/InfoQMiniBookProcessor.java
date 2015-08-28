@@ -4,14 +4,14 @@ import org.apache.commons.collections.CollectionUtils;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 
 import java.util.List;
 
 /**
  * @author code4crafter@gmail.com <br>
  */
-public class InfoQMiniBookProcessor implements PageProcessor {
+public class InfoQMiniBookProcessor implements IPageProcessor {
 
     private Site site;
 

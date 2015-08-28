@@ -3,7 +3,7 @@ package us.codecraft.webmagic.model;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.processor.PageProcessor;
+import us.codecraft.webmagic.processor.IPageProcessor;
 import us.codecraft.webmagic.selector.Selector;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  * @author code4crafter@gmail.com <br>
  * @since 0.2.0
  */
-class ModelPageProcessor implements PageProcessor {
+class ModelPageProcessor implements IPageProcessor {
 
     private List<PageModelExtractor> pageModelExtractorList = new ArrayList<PageModelExtractor>();
 

@@ -4,7 +4,7 @@ import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.pipeline.PageModelPipeline;
-import us.codecraft.webmagic.pipeline.Pipeline;
+import us.codecraft.webmagic.pipeline.IPipeline;
 
 import java.lang.annotation.Annotation;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author code4crafter@gmail.com <br>
  * @since 0.2.0
  */
-class ModelPipeline implements Pipeline {
+class ModelPipeline implements IPipeline {
 
     private Map<Class, PageModelPipeline> pageModelPipelines = new ConcurrentHashMap<Class, PageModelPipeline>();
 

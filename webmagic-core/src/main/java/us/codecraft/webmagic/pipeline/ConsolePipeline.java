@@ -12,7 +12,7 @@ import java.util.Map;
  * @author code4crafter@gmail.com <br>
  * @since 0.1.0
  */
-public class ConsolePipeline implements Pipeline {
+public class ConsolePipeline implements IPipeline {
 
     @Override
     public void process(ResultItems resultItems, Task task) {
