@@ -6,7 +6,7 @@ import us.codecraft.webmagic.downloader.IDownloader;
 import us.codecraft.webmagic.pipeline.IPipeline;
 import us.codecraft.webmagic.processor.IPageProcessor;
 import us.codecraft.webmagic.processor.SimplePageProcessor;
-import us.codecraft.webmagic.scheduler.Scheduler;
+import us.codecraft.webmagic.scheduler.IScheduler;
 
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -66,7 +66,7 @@ public class SpiderTest {
             public void setThread(int threadNum) {
 
             }
-        }).setScheduler(new Scheduler() {
+        }).setScheduler(new IScheduler() {
 
             private AtomicInteger count = new AtomicInteger();
 

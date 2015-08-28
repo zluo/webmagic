@@ -5,7 +5,7 @@ package us.codecraft.webmagic;
  *
  * @author code4crafter@gmail.com <br>
  * @since 0.1.0
- * @see us.codecraft.webmagic.scheduler.Scheduler
+ * @see us.codecraft.webmagic.scheduler.IScheduler
  * @see us.codecraft.webmagic.pipeline.IPipeline
  */
 public interface Task {

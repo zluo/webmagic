@@ -8,7 +8,7 @@ import us.codecraft.webmagic.Task;
  * @author code4crafter@gmail.com
  * @since 0.5.0
  */
-public interface MonitorableScheduler extends Scheduler {
+public interface MonitorableScheduler extends IScheduler {
 
     public int getLeftRequestsCount(Task task);
 

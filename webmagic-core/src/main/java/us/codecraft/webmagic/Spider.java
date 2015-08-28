@@ -15,7 +15,7 @@ import us.codecraft.webmagic.pipeline.IPipeline;
 import us.codecraft.webmagic.pipeline.ResultItemsCollectorPipeline;
 import us.codecraft.webmagic.processor.IPageProcessor;
 import us.codecraft.webmagic.scheduler.QueueScheduler;
-import us.codecraft.webmagic.scheduler.Scheduler;
+import us.codecraft.webmagic.scheduler.IScheduler;
 import us.codecraft.webmagic.thread.CountableThreadPool;
 import us.codecraft.webmagic.utils.UrlUtils;
 
@@ -31,8 +31,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Entrance of a crawler.<br>
- * A spider contains four components: Downloader, Scheduler, PageProcessor and
- * Pipeline.<br>
+ * A spider contains four components: IDownloader, IScheduler, IPageProcessor and
+ * IPipeline.<br>
  * You can customize a spider with various implementations of them. <br>
  * Examples: <br>
  * <br>
@@ -53,7 +53,7 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * @author code4crafter@gmail.com <br>
  * @see IDownloader
- * @see Scheduler
+ * @see IScheduler
  * @see IPageProcessor
  * @see IPipeline
  * @since 0.1.0
@@ -72,7 +72,7 @@ public class Spider implements Runnable, Task {
 
     protected String uuid;
 
-    protected Scheduler scheduler = new QueueScheduler();
+    protected IScheduler scheduler = new QueueScheduler();
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -173,12 +173,12 @@ public class Spider implements Runnable, Task {
      *
      * @param scheduler
      * @return this
-     * @see Scheduler
+     * @see IScheduler
      * @since 0.2.1
      */
-    public Spider setScheduler(Scheduler scheduler) {
+    public Spider setScheduler(IScheduler scheduler) {
         checkIfRunning();
-        Scheduler oldScheduler = this.scheduler;
+        IScheduler oldScheduler = this.scheduler;
         this.scheduler = scheduler;
         if (oldScheduler != null) {
             Request request;
@@ -687,7 +687,7 @@ public class Spider implements Runnable, Task {
         return startTime;
     }
 
-    public Scheduler getScheduler() {
+    public IScheduler getScheduler() {
         return scheduler;
     }
 

@@ -13,7 +13,7 @@ import us.codecraft.webmagic.scheduler.component.HashSetDuplicateRemover;
  * @author code4crafer@gmail.com
  * @since 0.5.0
  */
-public abstract class DuplicateRemovedScheduler implements Scheduler {
+public abstract class DuplicateRemovedScheduler implements IScheduler {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
