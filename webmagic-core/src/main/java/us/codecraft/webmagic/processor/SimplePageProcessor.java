@@ -19,7 +19,7 @@ public class SimplePageProcessor implements PageProcessor {
     private Site site;
 
     public SimplePageProcessor(String startUrl, String urlPattern) {
-        this.site = Site.me().addStartUrl(startUrl).
+        this.site = Site.create().addStartUrl(startUrl).
                 setDomain(UrlUtils.getDomain(startUrl));
         //compile "*" expression to regex
         this.urlPattern = "(" + urlPattern.replace(".", "\\.").replace("*", "[^\"'#]*") + ")";

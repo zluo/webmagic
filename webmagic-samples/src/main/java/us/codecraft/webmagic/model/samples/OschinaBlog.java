@@ -25,7 +25,7 @@ public class OschinaBlog{
     private List<String> tags;
 
     public static void main(String[] args) {
-        OOSpider.create(Site.me()
+        OOSpider.create(Site.create()
                 .setUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.101 Safari/537.36").addStartUrl("http://my.oschina.net/flashsword/blog")
                 .setSleepTime(0)
                 .setRetryTimes(3)

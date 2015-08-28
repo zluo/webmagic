@@ -34,7 +34,7 @@ public class GithubRepoApi implements HasKey {
     private String url;
 
     public static void main(String[] args) {
-        OOSpider.create(Site.me().setSleepTime(100)
+        OOSpider.create(Site.create().setSleepTime(100)
                 , new ConsolePageModelPipeline(), GithubRepoApi.class)
                 .addUrl("https://api.github.com/repos/code4craft/webmagic").run();
     }

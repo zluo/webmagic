@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class MamacnPageProcessor implements PageProcessor {
 
-    private Site site = Site.me().setDomain("www.mama.cn").setSleepTime(100);
+    private Site site = Site.create().setDomain("www.mama.cn").setSleepTime(100);
 
     @Override
     public void process(Page page) {

@@ -15,7 +15,7 @@ public class SinaBlogProcessor implements PageProcessor {
     public static final String URL_POST = "http://blog\\.sina\\.com\\.cn/s/blog_\\w+\\.html";
 
     private Site site = Site
-            .me()
+            .create()
             .setDomain("blog.sina.com.cn")
             .setSleepTime(3000)
             .setUserAgent(

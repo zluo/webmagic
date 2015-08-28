@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class OschinaBlogPageProcessor implements PageProcessor {
 
-    private Site site = Site.me().setDomain("my.oschina.net");
+    private Site site = Site.create().setDomain("my.oschina.net");
 
     @Override
     public void process(Page page) {

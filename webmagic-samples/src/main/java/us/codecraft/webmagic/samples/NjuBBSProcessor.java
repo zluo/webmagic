@@ -22,6 +22,6 @@ public class NjuBBSProcessor implements PageProcessor {
 
     @Override
     public Site getSite() {
-        return Site.me().setDomain("bbs.nju.edu.cn").addStartUrl("http://bbs.nju.edu.cn/board?board=Pictures");
+        return Site.create().setDomain("bbs.nju.edu.cn").addStartUrl("http://bbs.nju.edu.cn/board?board=Pictures");
     }
 }

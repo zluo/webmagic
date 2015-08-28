@@ -22,7 +22,7 @@ public class OschinaAnswer implements AfterExtractor{
     private String content;
 
     public static void main(String[] args) {
-        OOSpider.create(Site.me().addStartUrl("http://www.oschina.net/question/567527_120597"), OschinaAnswer.class).run();
+        OOSpider.create(Site.create().addStartUrl("http://www.oschina.net/question/567527_120597"), OschinaAnswer.class).run();
     }
 
     @Override

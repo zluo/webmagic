@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class AngularJSProcessor implements PageProcessor {
 
-    private Site site = Site.me();
+    private Site site = Site.create();
 
     private static final String ARITICALE_URL = "http://angularjs\\.cn/api/article/\\w+";
 

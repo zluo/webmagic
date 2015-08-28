@@ -54,7 +54,7 @@ public class PatternProcessorExample {
             }
         };
 
-        CompositePageProcessor pageProcessor = new CompositePageProcessor(Site.me().setDomain("github.com").setRetryTimes(3));
+        CompositePageProcessor pageProcessor = new CompositePageProcessor(Site.create().setDomain("github.com").setRetryTimes(3));
         CompositePipeline pipeline = new CompositePipeline();
 
         pageProcessor.setSubPageProcessors(githubRepoProcessor, githubUserProcessor);

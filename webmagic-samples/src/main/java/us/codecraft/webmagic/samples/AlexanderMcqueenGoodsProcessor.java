@@ -11,7 +11,7 @@ import us.codecraft.webmagic.scheduler.PriorityScheduler;
  */
 public class AlexanderMcqueenGoodsProcessor implements PageProcessor {
 
-    private Site site = Site.me().setRetryTimes(3).setSleepTime(0);
+    private Site site = Site.create().setRetryTimes(3).setSleepTime(0);
 
 
     public static final String URL_LIST = "http://www\\.alexandermcqueen\\.cn/.*";

@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class OschinaBlogPageProcesser implements PageProcessor {
 
-    private Site site = Site.me().setDomain("my.oschina.net").addStartUrl("http://my.oschina.net/flashsword/blog");
+    private Site site = Site.create().setDomain("my.oschina.net").addStartUrl("http://my.oschina.net/flashsword/blog");
 
     @Override
     public void process(Page page) {

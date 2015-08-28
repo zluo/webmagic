@@ -29,7 +29,7 @@ public class HttpClientDownloaderTest {
     @Ignore
     @Test
     public void testCookie() {
-        Site site = Site.me().setDomain("www.diandian.com").addCookie("t", "43ztv9srfszl99yxv2aumx3zr7el7ybb");
+        Site site = Site.create().setDomain("www.diandian.com").addCookie("t", "43ztv9srfszl99yxv2aumx3zr7el7ybb");
         HttpClientDownloader httpClientDownloader = new HttpClientDownloader();
         Page download = httpClientDownloader.download(new Request("http://www.diandian.com"), site.toTask());
         assertTrue(download.getHtml().toString().contains("flashsword30"));
@@ -51,7 +51,7 @@ public class HttpClientDownloaderTest {
     @Test
     public void testCycleTriedTimes() {
         HttpClientDownloader httpClientDownloader = new HttpClientDownloader();
-        Task task = Site.me().setDomain("localhost").setCycleRetryTimes(5).toTask();
+        Task task = Site.create().setDomain("localhost").setCycleRetryTimes(5).toTask();
         Request request = new Request("http://mylocalhost/404");
         Page page = httpClientDownloader.download(request, task);
         assertThat(page.getTargetRequests().size() > 0);
@@ -89,7 +89,7 @@ public class HttpClientDownloaderTest {
 
             private String getCharsetByUrl(String url) {
                 HttpClientDownloader downloader = new HttpClientDownloader();
-                Site site = Site.me();
+                Site site = Site.create();
                 CloseableHttpClient httpClient = new HttpClientGenerator().getClient(site);
                 // encoding in http header Content-Type
                 Request requestGBK = new Request(url);

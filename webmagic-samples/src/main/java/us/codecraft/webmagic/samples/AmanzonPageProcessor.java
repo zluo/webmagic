@@ -44,7 +44,7 @@ public class AmanzonPageProcessor implements PageProcessor{
 
     @Override
     public Site getSite() {
-        return Site.me();
+        return Site.create();
     }
 
     public static void main(String[] args) {

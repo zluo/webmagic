@@ -74,7 +74,7 @@ public class Site {
      *
      * @return new site
      */
-    public static Site me() {
+    public static Site create() {
         return new Site();
     }
 

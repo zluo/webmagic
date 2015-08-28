@@ -22,7 +22,7 @@ public class IteyeBlogProcessor implements PageProcessor {
     @Override
     public Site getSite() {
         if (site == null) {
-            site = Site.me().setDomain("yanghaoli.iteye.com").addStartUrl("http://yanghaoli.iteye.com/");
+            site = Site.create().setDomain("yanghaoli.iteye.com").addStartUrl("http://yanghaoli.iteye.com/");
         }
         return site;
     }

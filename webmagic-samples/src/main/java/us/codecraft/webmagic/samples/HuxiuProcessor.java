@@ -21,7 +21,7 @@ public class HuxiuProcessor implements PageProcessor {
 
     @Override
     public Site getSite() {
-        return Site.me().setDomain("www.huxiu.com").addStartUrl("http://www.huxiu.com/");
+        return Site.create().setDomain("www.huxiu.com").addStartUrl("http://www.huxiu.com/");
     }
 
     public static void main(String[] args) {

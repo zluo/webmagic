@@ -31,7 +31,7 @@ public class OschinaBlog {
 
     public static void main(String[] args) {
         //results will be saved to "/data/webmagic/" in json format
-        OOSpider.create(Site.me(), new JsonFilePageModelPipeline("/data/webmagic/"), OschinaBlog.class)
+        OOSpider.create(Site.create(), new JsonFilePageModelPipeline("/data/webmagic/"), OschinaBlog.class)
                 .addUrl("http://my.oschina.net/flashsword/blog").run();
     }
 
