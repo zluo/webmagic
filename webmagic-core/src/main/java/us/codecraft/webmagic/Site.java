@@ -219,17 +219,6 @@ public class Site {
         return acceptStatCode;
     }
 
-    /**
-     * get start urls
-     *
-     * @return start urls
-     * @see #getStartRequests
-     * @deprecated
-     */
-    @Deprecated
-    public List<String> getStartUrls() {
-        return UrlUtils.convertToUrls(startRequests);
-    }
 
     public List<Request> getStartRequests() {
         return startRequests;

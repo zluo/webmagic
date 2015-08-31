@@ -4,7 +4,7 @@ import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.pipeline.CollectorPageModelPipeline;
-import us.codecraft.webmagic.pipeline.CollectorPipeline;
+import us.codecraft.webmagic.pipeline.ICollectorPipeline;
 
 import java.lang.annotation.Annotation;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  * @author code4crafter@gmail.com
  * @since 0.4.0
  */
-class PageModelCollectorPipeline<T> implements CollectorPipeline<T> {
+class PageModelCollectorPipeline<T> implements ICollectorPipeline<T> {
 
     private final CollectorPageModelPipeline<T> classPipeline = new CollectorPageModelPipeline<T>();
 

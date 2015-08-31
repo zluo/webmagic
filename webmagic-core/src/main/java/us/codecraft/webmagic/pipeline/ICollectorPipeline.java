@@ -9,7 +9,7 @@ import java.util.List;
  * @author code4crafter@gmail.com
  * @since 0.4.0
  */
-public interface CollectorPipeline<T> extends IPipeline {
+public interface ICollectorPipeline<T> extends IPipeline {
 
     /**
      * Get all results collected.

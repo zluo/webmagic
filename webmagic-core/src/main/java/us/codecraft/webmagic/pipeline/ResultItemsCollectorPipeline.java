@@ -10,7 +10,7 @@ import java.util.List;
  * @author code4crafter@gmail.com
  * @since 0.4.0
  */
-public class ResultItemsCollectorPipeline implements CollectorPipeline<ResultItems> {
+public class ResultItemsCollectorPipeline implements ICollectorPipeline<ResultItems> {
 
     private List<ResultItems> collector = new ArrayList<ResultItems>();
 

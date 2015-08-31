@@ -2,7 +2,7 @@ package us.codecraft.webmagic.model;
 
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.pipeline.CollectorPipeline;
+import us.codecraft.webmagic.pipeline.ICollectorPipeline;
 import us.codecraft.webmagic.pipeline.PageModelPipeline;
 import us.codecraft.webmagic.processor.IPageProcessor;
 
@@ -77,7 +77,7 @@ public class OOSpider<T> extends Spider {
     }
 
     @Override
-    protected CollectorPipeline getCollectorPipeline() {
+    protected ICollectorPipeline getCollectorPipeline() {
         return new PageModelCollectorPipeline<T>(pageModelClasses.get(0));
     }
 

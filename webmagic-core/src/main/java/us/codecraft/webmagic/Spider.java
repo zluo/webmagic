@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import us.codecraft.webmagic.downloader.HttpClientDownloader;
 import us.codecraft.webmagic.downloader.IDownloader;
-import us.codecraft.webmagic.pipeline.CollectorPipeline;
+import us.codecraft.webmagic.pipeline.ICollectorPipeline;
 import us.codecraft.webmagic.pipeline.ConsolePipeline;
 import us.codecraft.webmagic.pipeline.IPipeline;
 import us.codecraft.webmagic.pipeline.ResultItemsCollectorPipeline;
@@ -130,31 +130,6 @@ public class Spider implements Runnable, Task {
         this.startRequests = pageProcessor.getSite().getStartRequests();
     }
 
-    /**
-     * Set startUrls of Spider.<br>
-     * Prior to startUrls of Site.
-     *
-     * @param startUrls
-     * @return this
-     */
-    public Spider startUrls(List<String> startUrls) {
-        checkIfRunning();
-        this.startRequests = UrlUtils.convertToRequests(startUrls);
-        return this;
-    }
-
-    /**
-     * Set startUrls of Spider.<br>
-     * Prior to startUrls of Site.
-     *
-     * @param startRequests
-     * @return this
-     */
-    public Spider startRequest(List<Request> startRequests) {
-        checkIfRunning();
-        this.startRequests = startRequests;
-        return this;
-    }
 
     /**
      * Set an uuid for spider.<br>
@@ -455,7 +430,7 @@ public class Spider implements Runnable, Task {
         for (Request request : UrlUtils.convertToRequests(urls)) {
             addRequest(request);
         }
-        CollectorPipeline collectorPipeline = getCollectorPipeline();
+        ICollectorPipeline collectorPipeline = getCollectorPipeline();
         pipelines.add(collectorPipeline);
         run();
         spawnUrl = true;
@@ -463,7 +438,7 @@ public class Spider implements Runnable, Task {
         return collectorPipeline.getCollected();
     }
 
-    protected CollectorPipeline getCollectorPipeline() {
+    protected ICollectorPipeline getCollectorPipeline() {
         return new ResultItemsCollectorPipeline();
     }
 
@@ -542,21 +517,6 @@ public class Spider implements Runnable, Task {
         return this;
     }
 
-    /**
-     * start with more than one threads
-     *
-     * @param threadNum
-     * @return this
-     */
-    public Spider thread(ExecutorService executorService, int threadNum) {
-        checkIfRunning();
-        this.threadNum = threadNum;
-        if (threadNum <= 0) {
-            throw new IllegalArgumentException("threadNum should be more than one!");
-        }
-        return this;
-    }
-
     public boolean isExitWhenComplete() {
         return exitWhenComplete;
     }
@@ -596,7 +556,7 @@ public class Spider implements Runnable, Task {
      * @since 0.4.1
      */
     public Status getStatus() {
-        return Status.fromValue(stat.get());
+        return Status.valueOf(stat.get());
     }
 
 
@@ -613,7 +573,7 @@ public class Spider implements Runnable, Task {
             return value;
         }
 
-        public static Status fromValue(int value) {
+        public static Status valueOf(int value) {
             for (Status status : Status.values()) {
                 if (status.getValue() == value) {
                     return status;
