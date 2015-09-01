@@ -9,6 +9,7 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.utils.FilePersistentBase;
+import us.codecraft.webmagic.utils.UrlUtils;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -23,26 +24,27 @@ import java.util.Map;
  * @since 0.1.0
  */
 @ThreadSafe
-public class FilePipeline extends FilePersistentBase implements IPipeline {
+public class FileSitePipeline extends FilePersistentBase implements IPipeline {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
      * create a FilePipeline with default path"/data/webmagic/"
      */
-    public FilePipeline() {
+    public FileSitePipeline() {
         setPath("/data/webmagic/");
     }
 
-    public FilePipeline(String path) {
+    public FileSitePipeline(String path) {
         setPath(path);
     }
 
     @Override
     public void process(ResultItems resultItems, Task task) {
-        String path = this.path + PATH_SEPERATOR + task.getUUID() + PATH_SEPERATOR;
+       // String path = this.path + PATH_SEPERATOR + task.getUUID() + PATH_SEPERATOR;
         try {
-            PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(getFile(path + DigestUtils.md5Hex(resultItems.getRequest().getUrl()) + ".html")),"UTF-8"));
+            String url =appendDefaultFileName(resultItems.getRequest().getUrl());
+            PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(new FileOutputStream(getFile(path + UrlUtils.removeProtocol(url))),"UTF-8"));
             printWriter.println("url:\t" + resultItems.getRequest().getUrl());
             for (Map.Entry<String, Object> entry : resultItems.getAll().entrySet()) {
                 if (entry.getValue() instanceof Iterable) {

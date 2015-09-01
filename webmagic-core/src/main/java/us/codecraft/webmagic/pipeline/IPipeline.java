@@ -1,5 +1,6 @@
 package us.codecraft.webmagic.pipeline;
 
+import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 
@@ -16,9 +17,6 @@ public interface IPipeline {
 
     /**
      * Process extracted results.
-     *
-     * @param resultItems
-     * @param task
      */
     public void process(ResultItems resultItems, Task task);
 }

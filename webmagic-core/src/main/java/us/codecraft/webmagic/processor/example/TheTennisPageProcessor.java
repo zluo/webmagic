@@ -3,6 +3,8 @@ package us.codecraft.webmagic.processor.example;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.pipeline.FilePipeline;
+import us.codecraft.webmagic.pipeline.FileSitePipeline;
 import us.codecraft.webmagic.processor.IPageProcessor;
 
 import java.util.List;
@@ -19,7 +21,6 @@ public class TheTennisPageProcessor implements IPageProcessor {
         List<String> links = page.getHtml().links().regex("http://www\\.tennisplayer\\.net/.+").all();
         page.addTargetRequests(links);
         String content =page.getHtml().toString();
-        System.out.println(content);
         page.putField("content", content);
     }
 
@@ -30,6 +31,8 @@ public class TheTennisPageProcessor implements IPageProcessor {
     }
 
     public static void main(String[] args) {
-        Spider.create(new TheTennisPageProcessor()).addUrl("http://www.tennisplayer.net").run();
+        Spider spider =Spider.create(new TheTennisPageProcessor()).addUrl("http://www.tennisplayer.net");
+        spider.addPipeline(new FileSitePipeline("c:/temp/"));
+        spider.run();
     }
 }

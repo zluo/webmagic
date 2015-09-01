@@ -15,10 +15,10 @@ public class FilePersistentBase {
     public static String PATH_SEPERATOR = "/";
 
     static {
-        String property = System.getProperties().getProperty("file.separator");
+/*        String property = System.getProperties().getProperty("file.separator");
         if (property != null) {
             PATH_SEPERATOR = property;
-        }
+        }*/
     }
 
     public void setPath(String path) {
@@ -46,5 +46,19 @@ public class FilePersistentBase {
 
     public String getPath() {
         return path;
+    }
+    
+    public static String appendDefaultFileName(String url){
+	String domain=UrlUtils.getDomain(url);
+	int index=url.lastIndexOf("/");
+	String fileName = url.substring(index);
+	if (fileName.contains(".")&& !fileName.contains(domain)){
+	    return url;
+	}else{
+	    if (url.charAt(url.length()-1)!='/'){
+		url =url + "/";
+	    }
+	    return url + "index.html";
+	}
     }
 }
